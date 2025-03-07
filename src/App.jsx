@@ -1,5 +1,5 @@
 import './App.css'
-import Landing from './pages/landingpage';
+import Landing from './pages/landingPage';
 import Admin from './pages/adminPage';
 import Login from './pages/login';
 import Register from './pages/register';
