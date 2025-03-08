@@ -5,6 +5,7 @@ import { NoDataFound } from '../noDataFound.jsx'
 
 const UserComplaints = () => {
   const [allcomplaints, setallcomplaints] = useState([]);
+
   useEffect(() => {
     axios.get('/userComplaints')
     .then((data)=>{
@@ -16,20 +17,18 @@ const UserComplaints = () => {
     })
   }, [])
 
-
-
   return (
     <div>
-      {(!allcomplaints || allcomplaints.length == 0) && (
+      {!allcomplaints ?
         <NoDataFound/>
-      )}
-      {allcomplaints.length > 0 && (
-        <div>
-          {allcomplaints.map((data,i)=>{
-            return <Card key={i} det={data}/>
-          })}
-        </div>
-      )}
+      :
+        (
+          <div>
+            {allcomplaints.map((data,i)=>{
+              return <Card key={i} det={data}/>
+            })}
+          </div>
+        )}
     </div>
   )
 }
