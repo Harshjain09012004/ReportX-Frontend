@@ -29,7 +29,7 @@ function Login() {
   if(redirect) {return <Navigate to={'/'}/>}
   return (
     <>
-        <div className='login h-screen w-full bg-gray-200 flex justify-center place-items-center'>
+        <div className='login h-[88vh] w-full bg-gray-200 flex justify-center place-items-center'>
             <div className='bg-white h-96 w-[30%] rounded-3xl flex flex-col place-items-center justify-center gap-12'>
                 <h3 className=' text-3xl font-semibold'>Login / Sign In </h3>
                 <form className='flex flex-col justify-center place-items-center gap-7 ' onSubmit={loginhandler}>

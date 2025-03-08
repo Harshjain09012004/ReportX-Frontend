@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import AccountPage  from './pages/accountPage';
 import { VisualisationPage } from './pages/visualisationPage';
+import Header from './header';
 
 const url = import.meta.env.VITE_SERVER;
 axios.defaults.baseURL = url;
@@ -16,6 +17,7 @@ axios.defaults.withCredentials = true;
 function App() {
   return (
     <ContextProvider>
+      <Header/>
       <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path='/admin' element={<Admin/>}/>

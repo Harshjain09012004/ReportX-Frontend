@@ -3,7 +3,6 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { GrUserPolice } from "react-icons/gr";
 import { LuUser2 } from "react-icons/lu";
 import { BiPaste } from "react-icons/bi";
-import Header from '../header';
 import { usercontext } from '../UserContext';
 import { Registercomplaints } from './registerComplaints';
 import UserComplaints from './usercomplaints';
@@ -30,7 +29,6 @@ import Subfooter from '../subfooter';
     <>
         {isAdmin && (
           <>
-            <Header/>
             <ProfilePage setredirect={setredirect}/>
             <div className='h-16'></div>
             <Subfooter/>
@@ -40,7 +38,6 @@ import Subfooter from '../subfooter';
 
         {!isAdmin && (
           <>
-            <Header/>
             <nav className='flex gap-14 mt-7 mb-12 justify-center text-lg font-semibold'>
                 <Link to={'/account/profile'} className={linkclass('profile')}>
                   <LuUser2/>

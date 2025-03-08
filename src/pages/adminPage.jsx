@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react';
 import axios from 'axios';
-import Header from '../header.jsx'
 import { usercontext } from '../UserContext.jsx';
 import { Navigate } from 'react-router-dom';
 import Footer from '../footer';
@@ -40,7 +39,6 @@ function Admin() {
   return (
 
     <div className='h-[100%] w-[100%] bg-zinc-50'>
-      <Header/>
 
       <div className='AdminHeader mt-3 flex place-items-center justify-between sticky top-0 z-10 bg-zinc-50 h-24  bg-opacity-85'>
 

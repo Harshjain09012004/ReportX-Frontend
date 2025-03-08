@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { usercontext } from '../UserContext';
 import { Navigate } from 'react-router-dom';
-import Header from '../header';
 import { TypeAnimation } from 'react-type-animation';
 
 import { Chart as ChartJS, CategoryScale, LinearScale,
@@ -560,7 +559,6 @@ export const VisualisationPage = () => {
   if(ready && user && isAdmin){
     return (
     <div className='bg-zinc-50 '>
-      <Header/>
       <div className=' w-[750px] p-1 flex justify-center text-gray-600 font-semibold m-5 ml-[350px]'>
         <TypeAnimation
         sequence={['We thrive to create a peaceful Society .', 2000, 'Our aim is to make citizen life easy .', 2000, 'Analysing data is a key to implement our goals .', 2000]}
