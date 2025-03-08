@@ -54,13 +54,13 @@ const ChatBot = ()=>{
     return (
         <div className='cursor-pointer'>
             <div id='Chatbot' className='fixed right-6 bottom-16 bg-blue-50 w-16 h-16 rounded-full flex place-items-center justify-center border border-blue-300 shadow-md shadow-blue-400 active:scale-110 hover:bg-blue-100 hover:scale-105 transition-all' onClick={helpHandler}>
-                <img src='src/assets/Chatbot.png'/>
+                <img src='Chatbot.png'/>
             </div>
 
             <div className={`bg-indigo-50 rounded-2xl fixed transition-all flex flex-col gap-2 place-items-start border border-blue-300 p-4 shadow-md shadow-slate-400 ${helpMenuCss}`}>
                 <div className='flex justify-evenly place-items-center gap-2'>
                     <div className='object-cover w-10'>
-                        <img src='src/assets/Chatbot.png'/>
+                        <img src='Chatbot.png'/>
                     </div>
                     <p className='font-medium'>ChatMitra</p>
                     <div className='w-2 h-2 rounded-full bg-green-500'></div>
@@ -80,7 +80,7 @@ const ChatBot = ()=>{
                     <div className={`Ans bg-white min-h-4  max-h-32 border border-green-300 shadow-sm shadow-green-200 text-sm p-1 rounded-lg overflow-auto flex gap-2 ${ques ? '' : 'hidden'}`}>
 
                         <div className='w-5 object-cover'> 
-                            <img src='src/assets/Chatbot.png'/>
+                            <img src='Chatbot.png'/>
                         </div>
 
                         {send ?    

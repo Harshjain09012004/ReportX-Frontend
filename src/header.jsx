@@ -12,7 +12,7 @@ const Header = () => {
     <>
         <div className=' bg-white h-20 w-full flex  place-items-center px-[6%] justify-between shadow-md'>
             <Link to={'/'}>
-                <img src='\src\assets\banner.png' className='w-48 h-20'/>
+                <img src='banner.png' className='w-56 h-40'/>
             </Link>
             
             <div className='flex place-items-center gap-6 '>

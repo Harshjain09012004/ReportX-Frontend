@@ -20,7 +20,7 @@ const UserComplaints = () => {
 
   return (
     <div>
-      {allcomplaints.length == 0 && (
+      {(!allcomplaints || allcomplaints.length == 0) && (
         <NoDataFound/>
       )}
       {allcomplaints.length > 0 && (

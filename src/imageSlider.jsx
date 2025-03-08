@@ -4,7 +4,7 @@ import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 const Slider = () => {
     const [loc, setloc] = useState(0);
-    let imageArray = ['src/assets/Image1.avif','src/assets/Image0.jpg','src/assets/Image3.webp','src/assets/Image5.jpg','src/assets/Image2.jpg','src/assets/Image6.jpg','src/assets/Image4.jpg'];
+    let imageArray = ['Image1.avif','Image0.jpg','Image3.webp','Image5.jpg','Image2.jpg','Image6.jpg','Image4.jpg'];
 
     return (
         <div className='bg-zinc-100 p-4 border border-b-slate-300 mt-10'>
