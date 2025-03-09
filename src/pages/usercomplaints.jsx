@@ -9,6 +9,7 @@ const UserComplaints = () => {
   useEffect(() => {
     axios.get('/userComplaints')
     .then((data)=>{
+      console.log(data);
       let arr = data.data.complaints;
       setallcomplaints(arr);
     })
@@ -22,13 +23,12 @@ const UserComplaints = () => {
       {!allcomplaints ?
         <NoDataFound/>
       :
-        (
-          <div>
-            {allcomplaints.map((data,i)=>{
-              return <Card key={i} det={data}/>
-            })}
-          </div>
-        )}
+        <div>
+          {allcomplaints.map((data,i)=>{
+            return <Card key={i} det={data}/>
+          })}
+        </div>
+      }
     </div>
   )
 }
