@@ -7,10 +7,11 @@ const UserComplaints = () => {
   const [allcomplaints, setallcomplaints] = useState([]);
 
   useEffect(() => {
-    axios.get('/userComplaints')
+    axios.get('/userComplaints', {withCredentials : true})
     .then((data)=>{
       console.log(data);
       let arr = data.data.complaints;
+      console.log(arr);
       setallcomplaints(arr);
     })
     .catch((err)=>{
