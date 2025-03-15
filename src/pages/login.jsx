@@ -11,12 +11,13 @@ function Login() {
   const {setuser,setdp,setisAdmin,setready} = useContext(usercontext);
   
   const [showCredentials, setshowCredentials] = useState(true);
+  const [logging, setlogging] = useState(false);
   
   function credentialsHandler(){setshowCredentials(false);}
 
   async function loginhandler(e)
   {
-    e.preventDefault();                
+    e.preventDefault(); setlogging(true);               
     try{
         const res = await axios.post('/login',{lname,lpass});
 
@@ -26,6 +27,7 @@ function Login() {
             setredirect(true); setready(true);
         }
         else {alert('login failed : ' + res.data.err)}
+        setlogging(false);
     }
     catch(e){alert('login failed')}
     setlname(""); setlpass("");
@@ -61,7 +63,9 @@ function Login() {
                         setlpass(e.target.value);
                     }} required/>
 
-                    <button type='submit' className='submit'>Login</button>
+                    <button type='submit' className='submit'>
+                        {logging ? 'Logging In' : 'Login'}
+                    </button>
                 </form>
 
                 <div className='flex flex-row gap-10'>

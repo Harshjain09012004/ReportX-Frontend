@@ -5,14 +5,13 @@ import { NoDataFound } from '../noDataFound.jsx'
 
 const UserComplaints = () => {
   const [allcomplaints, setallcomplaints] = useState([]);
+  const [loading, setloading] = useState(true);
 
   useEffect(() => {
     axios.get('/userComplaints', {withCredentials : true})
     .then((data)=>{
-      console.log(data);
       let arr = data.data.complaints;
-      console.log(arr);
-      setallcomplaints(arr);
+      setallcomplaints(arr); setloading(false);
     })
     .catch((err)=>{
       console.log(err);
@@ -20,17 +19,25 @@ const UserComplaints = () => {
   }, [])
 
   return (
-    <div>
-      {!allcomplaints ?
-        <NoDataFound/>
-      :
+    <>
+      {loading && (
+        <p className='font-bold text-3xl text-center'>Fetching Data...</p>
+      )}
+
+      {!loading && (
         <div>
-          {allcomplaints.map((data,i)=>{
-            return <Card key={i} det={data}/>
-          })}
+          {!allcomplaints ?
+            <NoDataFound/>
+          :
+            <div>
+              {allcomplaints.map((data,i)=>{
+                return <Card key={i} det={data}/>
+              })}
+            </div>
+          }
         </div>
-      }
-    </div>
+      )}
+    </>
   )
 }
 

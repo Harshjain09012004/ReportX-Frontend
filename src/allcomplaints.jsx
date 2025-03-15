@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import AdminCard from './adminCard';
@@ -6,14 +6,22 @@ import { NoDataFound } from './noDataFound';
 
 export const AllComplaints = ({ det, setdet }) => {
   
+  const [loading, setloading] = useState(true);
+
   useEffect(() => {
     axios.get('/allComplaints')
-      .then((data) => setdet(data.data))
+      .then((data) => {
+        setdet(data.data); setloading(false);
+      })
       .catch((err) => console.error('Error fetching complaints:', err));
   }, []);
 
   return (
     <div className='flex flex-col m-7'>
+      {loading && (
+        <p className='font-bold text-3xl text-center'>Fetching Data...</p>
+      )}
+
       {det.length > 0 && (
         <div className='ml-16 bg-white w-44 text-center p-2 rounded-lg border border-gray-200 shadow-md shadow-gray-300'>
           {det.length} Complaints Fetched
@@ -24,7 +32,7 @@ export const AllComplaints = ({ det, setdet }) => {
         <AdminCard key={i} det={data} />
       ))}
 
-      {det.length === 0 && <NoDataFound />}
+      {!loading && det.length === 0 && <NoDataFound />}
     </div>
   );
 };
